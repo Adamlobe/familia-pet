@@ -5,7 +5,7 @@ import os
 st.title('**Espaço** Familia & Pets')
 st.subheader('Nunca foi tão fácil achar o lugar perfeito', divider='gray')
 
-df = pd.read_excel('lugares.xlsx')
+df = pd.read_excel('banco_excel/lugares.xlsx')
 
 colunas = df.columns[0:6]
 geoLocation = df[['LATITUDE','LONGITUDE']]
