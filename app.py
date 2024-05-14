@@ -13,18 +13,15 @@ geoLocation = df[['LATITUDE','LONGITUDE']]
 places = [' Selecione um lugar...'] + df['Nome'].unique().tolist()
 places.sort()
 
-filtro = st.sidebar.selectbox("Selecione um lugar:", places)
+filtro = st.selectbox("Selecione um lugar:", places)
 
 if filtro == ' Selecione um lugar...':
-    #st.write(df[colunas])
+    
     st.map(geoLocation)
 else:
     df_filtrado = df[df['Nome'] == filtro][colunas]
     
-
     index_linha_filtrada = df_filtrado.index.tolist()
-
-    #st.write(df_filtrado)
 
     lugar = df.iloc[index_linha_filtrada[0],1]
     endereco = df.iloc[index_linha_filtrada[0],2]
